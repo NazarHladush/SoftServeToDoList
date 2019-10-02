@@ -1,7 +1,7 @@
-package mysqlapp;
+package model;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 public class ToDoList implements Serializable {
 
@@ -11,23 +11,26 @@ public class ToDoList implements Serializable {
     private String title;
     private String description;
     private String action;
-    private String time;
+    private Timestamp time;
+    private int userId;
 
     public ToDoList() {
     }
 
-    public ToDoList(String title, String description, String action) {
+    public ToDoList(String title, String description, String action, int userId) {
         this.title = title;
         this.description = description;
         this.action = action;
+        this.userId = userId;
     }
 
-    public ToDoList(int id, String title, String description, String action, String time) {
+    public ToDoList(int id, String title, String description, String action, Timestamp time, int userId) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.action = action;
         this.time = time;
+        this.userId = userId;
     }
 
     public static long getSerialVersionUID() {
@@ -66,22 +69,31 @@ public class ToDoList implements Serializable {
         this.action = action;
     }
 
-    public String getTime() {
+    public Timestamp getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Timestamp time) {
         this.time = time;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     @Override
-    public String toString() {
+public String toString() {
         return "ToDoList{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", action='" + action + '\'' +
-                ", time='" + time + '\'' +
+                ", time=" + time +
+                ", userId=" + userId +
                 '}';
     }
 }

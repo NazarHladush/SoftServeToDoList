@@ -1,7 +1,7 @@
-package webapp;
+package controller;
 
-import mysqlapp.User;
-import mysqlapp.UserDB;
+import DAO.implementation.UserDAOImpl;
+import model.User;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.servlet.ServletException;
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet("/register")
 public class register extends HttpServlet {
@@ -18,7 +19,14 @@ public class register extends HttpServlet {
         String password = DigestUtils.md5Hex(request.getParameter("password"));
 
         User user = new User(request.getParameter("loginname"), password, request.getParameter("firstName"), request.getParameter("secondName"));
-        UserDB.insert(user);
+
+        UserDAOImpl userDAO = new UserDAOImpl();
+
+        try {
+            userDAO.create(user);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         response.sendRedirect("/SoftServe_war_exploded/login");
 
     }
