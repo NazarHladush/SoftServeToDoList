@@ -21,8 +21,9 @@ public class AuthFilter implements Filter {
 
         HttpSession session = request.getSession(false);
 
-        if (session == null || session.getAttribute("user") == null) {
+        if (session == null || session.getAttribute("id") == null) {
             servletRequest.getServletContext().getRequestDispatcher("/login").forward(request, response);
+//            response.sendRedirect("/login");
         }
 
         filterChain.doFilter(request, response);

@@ -33,7 +33,7 @@
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
-        <p>Not registered? <a href="/SoftServe_war_exploded/register">Create an account</a></p>
+        <p>Not registered? <a href="/SoftServe_war_exploded/registration">Create an account</a></p>
         <p style="color: red;">${error}</p>
     </form>
 </body>
