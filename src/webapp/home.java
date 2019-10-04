@@ -1,4 +1,4 @@
-package controller;
+package webapp;
 
 import DAO.implementation.ToDoListDAOImpl;
 import model.ToDoList;
@@ -22,22 +22,17 @@ public class home extends HttpServlet {
         String action = request.getParameter("action");
         HttpSession session = request.getSession();
         int userId = (int)session.getAttribute("id");
-        System.out.println(title);
         ToDoList toDoList = new ToDoList(title, description, action, userId);
-
         try {
             toDoListDAO.create(toDoList);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         response.sendRedirect(request.getContextPath() + "/home");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        System.out.println(session.getAttribute("id"));
-        System.out.println(session.getAttribute("user"));
         int userId = (int)session.getAttribute("id");
         ArrayList<ToDoList> toDoLists = null;
         try {

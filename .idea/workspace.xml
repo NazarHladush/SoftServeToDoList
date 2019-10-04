@@ -7,21 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87aff5e-b817-43af-b18d-74456038403f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftServe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SoftServe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mysqlapp/DB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mysqlapp/ToDoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ToDoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mysqlapp/ToDoListDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mysqlapp/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mysqlapp/UserDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/implementation/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/implementation/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/connection/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/connection/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servletFilter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServletFilter/AuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servletFilter/CharsetFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServletFilter/CharsetFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/registration.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +97,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/lab6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -274,16 +278,22 @@
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
+        <option name="contentProportion" value="0.14890711" />
         <treeState>
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4a6143ca" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@cf6ef331" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4a6143ca" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@77492199" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@cf6ef331" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1542a6a4" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@cf6ef331" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@44a4718c" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -304,7 +314,13 @@
       <workItem from="1569660369544" duration="19910000" />
       <workItem from="1569756959226" duration="46483000" />
       <workItem from="1569908863701" duration="878000" />
-      <workItem from="1569910844958" duration="42105000" />
+      <workItem from="1569910844958" duration="52173000" />
+      <workItem from="1570090203037" duration="781000" />
+      <workItem from="1570092901930" duration="52000" />
+      <workItem from="1570109103491" duration="2580000" />
+      <workItem from="1570111794672" duration="2830000" />
+      <workItem from="1570115641933" duration="4493000" />
+      <workItem from="1570179734196" duration="13579000" />
     </task>
     <servers />
   </component>
@@ -316,7 +332,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

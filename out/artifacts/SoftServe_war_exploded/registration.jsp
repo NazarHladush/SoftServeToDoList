@@ -20,7 +20,7 @@
 <body class="text-center">
 <%--    <h1>Login</h1>--%>
 
-<form class="form-signin" action="/SoftServe_war_exploded/register" method="post">
+<form class="form-signin" action="/SoftServe_war_exploded/registration" method="post">
     <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
 
     <label for="inputEmail" class="sr-only">Email address</label>
@@ -34,6 +34,7 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
     <p>Have an account? <a href="/SoftServe_war_exploded/login">Sign in</a></p>
+    <p style="color: red;">${error}</p>
 </form>
 
 </body>

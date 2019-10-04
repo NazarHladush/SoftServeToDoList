@@ -1,8 +1,10 @@
-package controller;
+package webapp;
 
 import DAO.implementation.UserDAOImpl;
+import exeption.EmailAlreadyExists;
 import model.User;
 import org.apache.commons.codec.digest.DigestUtils;
+import service.Service;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,26 +14,32 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/register")
-public class register extends HttpServlet {
+@WebServlet("/registration")
+public class registration extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String password = DigestUtils.md5Hex(request.getParameter("password"));
+        String password = request.getParameter("password");
+        String email = request.getParameter("loginname");
+        String firstName = request.getParameter("firstName");
+        String secondName = request.getParameter("secondName");
 
-        User user = new User(request.getParameter("loginname"), password, request.getParameter("firstName"), request.getParameter("secondName"));
+        User user = new User(email, password, firstName, secondName);
 
-        UserDAOImpl userDAO = new UserDAOImpl();
+
 
         try {
-            userDAO.create(user);
+            Service.registration(user);
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (EmailAlreadyExists e) {
+            request.setAttribute("error", "This email already exists");
+            request.getRequestDispatcher("/registration.jsp").forward(request, response);
         }
         response.sendRedirect("/SoftServe_war_exploded/login");
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/register.jsp").forward(request, response);
+        request.getRequestDispatcher("/registration.jsp").forward(request, response);
     }
 }

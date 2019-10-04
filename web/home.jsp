@@ -44,9 +44,7 @@
     <input type="text" name="description" placeholder="Description">
     <input type="text" name="action" placeholder="Action">
     <button type="submit">Add</button>
-
 </form>
-
 
 </body>
 </html>

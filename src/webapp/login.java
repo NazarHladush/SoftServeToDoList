@@ -1,8 +1,8 @@
-package controller;
+package webapp;
 
-import DAO.implementation.UserDAOImpl;
+import exeption.IncorrectLoginData;
 import model.User;
-import org.apache.commons.codec.digest.DigestUtils;
+import service.Service;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Collections;
 
 @WebServlet("/login")
 public class login extends HttpServlet {
@@ -21,28 +20,17 @@ public class login extends HttpServlet {
         String uEmail = request.getParameter("loginname");
         String uPassword = request.getParameter("password");
 
-        String md5Pass = DigestUtils.md5Hex(uPassword);
-        UserDAOImpl userDAO = new UserDAOImpl();
-
-        User user = null;
         try {
-            user = userDAO.selectByEmailAndPassword(uEmail,md5Pass);
+            User user = Service.login(uEmail, uPassword);
+            HttpSession session = request.getSession();
+            session.setAttribute("id", user.getId());
+            response.sendRedirect(request.getContextPath() + "/home");
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-        if (user == null){
+        } catch (IncorrectLoginData incorrectLoginData) {
             request.setAttribute("error", "Login or Password incorrect! Try again");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
-
         }
-
-        HttpSession session = request.getSession();
-        System.out.println(session.getId());
-        System.out.println(Collections.list(session.getAttributeNames()).toString());
-        session.setAttribute("id", user.getId());
-        session.setAttribute("user", user.getEmail());
-        response.sendRedirect(request.getContextPath()+"/home");
-
 
     }
 

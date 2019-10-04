@@ -21,6 +21,8 @@ public class UserDAOImpl implements UserDAO {
     private static final String UPDATE = "UPDATE softserve.user SET (`email=?`, `password=?`, `first_name=?`, `second_name=?`) WHERE `user.id`=?";
     //language=SQL
     private static final String FIND_BY_EMAIL_ADN_PASSWORD = "SELECT * FROM softserve.user WHERE `email` = ? and `password` = ?";
+    //language=SQL
+    private static final String FIND_BY_EMAIL = "SELECT * FROM softserve.user WHERE `email` = ?";
 
     private static PreparedStatement createPreparedStatementById(Connection connection, String sql, int id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement(sql);
@@ -51,6 +53,12 @@ public class UserDAOImpl implements UserDAO {
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setString(1, uEmail);
         ps.setString(2, uPassword);
+        return ps;
+    }
+
+    private PreparedStatement createPreparedStatementByEmail(Connection conn, String sql, String uEmail) throws SQLException {
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1, uEmail);
         return ps;
     }
 
@@ -129,5 +137,18 @@ public class UserDAOImpl implements UserDAO {
             }
         }
         return user;
+    }
+
+    @Override
+    public int selectByEmail(String email) throws SQLException {
+        Connection connection = ConnectionManager.getConnection();
+        int size = 0;
+        try (PreparedStatement preparedStatement = createPreparedStatementByEmail(connection,FIND_BY_EMAIL,email);
+            ResultSet resultSet = preparedStatement.executeQuery()) {
+            if (resultSet.next()) {
+                size++;
+            }
+        }
+        return size;
     }
 }

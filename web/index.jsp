@@ -10,31 +10,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Index</title>
 </head>
 <body>
-<h1>Hello World</h1>
-$END$
-
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Email</th>
-        <th>Password</th>
-        <th>First Name</th>
-        <th>Second Name</th>
-    </tr>
-    <c:forEach var="user" items="${users}">
-        <tr>
-            <td>${user.id}</td>
-            <td>${user.email}</td>
-            <td>${user.password}</td>
-            <td>${user.firstName}</td>
-            <td>${user.secondName}</td>
-        </tr>
-    </c:forEach>
-</table>
-
-
+<a href="/SoftServe_war_exploded/login">LOGIN</a>
 </body>
 </html>
