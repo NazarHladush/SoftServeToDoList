@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConnectionManager {
-    private static final String url = "jdbc:mysql://localhost:3306/softserve?serverTimezone=Europe/Kiev&useSSL=false";
+    private static final String url = "jdbc:mysql://localhost:3306/softserve?useSSL=false";
     //&serverTimezone=UTC
     private static final String username = "root";
     private static final String password = "1234567Aa";

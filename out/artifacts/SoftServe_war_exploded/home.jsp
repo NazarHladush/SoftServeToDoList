@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
@@ -18,35 +18,76 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Hello World</h1>
-
-<table>
+<form action="/SoftServe_war_exploded/home" method="post" class="d-flex justify-content-center">
+    <input type="text" name="title" placeholder="Title">
+    <input type="text" name="description" placeholder="Description">
+<%--    <div class="dropdown">--%>
+<%--    <select name="action" class="btn btn-secondary dropdown">--%>
+<%--        <div class="dropdown-menu">--%>
+<%--        <option class="dropdown-item" value="Today">Today</option>--%>
+<%--        <option class="dropdown-item" value="Tomorrow">Tomorrow</option>--%>
+<%--        <option class="dropdown-item" value="Upcoming">Upcoming</option>--%>
+<%--        </div>--%>
+<%--    </select>--%>
+<%--    </div>--%>
+        <input type="datetime-local" name="datetime">
+<%--    <input type="text" name="action" placeholder="Action">--%>
+    <button type="submit" class="btn btn-light">Add</button>
+</form>
+<div class="d-flex justify-content-center">
+<table class="table table-striped">
     <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Action</th>
-        <th>Time</th>
+<%--        <th>Id</th>--%>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
+        <th scope="col">Time</th>
+        <th scope="col"></th>
     </tr>
     <c:forEach var="user" items="${todolists}">
         <tr>
-            <td>${user.id}</td>
-            <td>${user.title}</td>
-            <td>${user.description}</td>
-            <td>${user.action}</td>
-            <td>${user.time}</td>
+<%--            <td>${user.id}</td>--%>
+            <td scope="row">${user.title}</td>
+            <td scope="row">${user.description}</td>
+            <td scope="row">${user.action}</td>
+            <td scope="row">${user.time}</td>
+            <td scope="row"><input class="btn btn-danger" type="button" onclick="deleteItem(${user.id})" value="Delete"></td>
         </tr>
     </c:forEach>
 </table>
 
-<form action="/SoftServe_war_exploded/home" method="post">
-    <input type="text" name="title" placeholder="Title">
-    <input type="text" name="description" placeholder="Description">
-    <input type="text" name="action" placeholder="Action">
-    <button type="submit">Add</button>
-
-</form>
-
-
+</div>
 </body>
 </html>
+<script>
+    function deleteItem(id){
+        var url = "http://localhost:8090/SoftServe_war_exploded/home/delete/";
+        var xhr = new XMLHttpRequest();
+        xhr.open("DELETE", url+id);
+        xhr.onload = function () {
+            if (xhr.readyState == 4 && xhr.status == "200") {
+                // alert("200");
+                document.location.reload();
+            } else {
+                console.error("error");
+            }
+        }
+        xhr.send(null);
+    }
+
+    function deleteTodo(id){
+        $.ajax({
+                url: '/SoftServe_war_exploded/home',
+                data: {name:"id"},
+                type: 'delete',
+                cache: false,
+                success: function () {
+                    alert("ok");
+                },
+                error: function () {
+                    alert('error');
+                }
+            }
+        )
+    }
+</script>
