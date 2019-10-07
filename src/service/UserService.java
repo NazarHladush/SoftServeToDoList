@@ -1,14 +1,14 @@
 package service;
 
 import DAO.implementation.UserDAOImpl;
-import exeption.EmailAlreadyExists;
-import exeption.IncorrectLoginData;
+import exeptions.EmailAlreadyExists;
+import exeptions.IncorrectLoginData;
 import model.User;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.sql.SQLException;
 
-public class Service {
+public class UserService {
     static UserDAOImpl userDAO = new UserDAOImpl();
 
     public static User login(String uEmail, String uPassword) throws SQLException, IncorrectLoginData {

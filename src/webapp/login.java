@@ -1,8 +1,8 @@
 package webapp;
 
-import exeption.IncorrectLoginData;
+import exeptions.IncorrectLoginData;
 import model.User;
-import service.Service;
+import service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +21,7 @@ public class login extends HttpServlet {
         String uPassword = request.getParameter("password");
 
         try {
-            User user = Service.login(uEmail, uPassword);
+            User user = UserService.login(uEmail, uPassword);
             HttpSession session = request.getSession();
             session.setAttribute("id", user.getId());
             response.sendRedirect(request.getContextPath() + "/home");

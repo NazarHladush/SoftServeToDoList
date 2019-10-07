@@ -20,6 +20,7 @@ public class home extends HttpServlet {
         String title = request.getParameter("title");
         String description = request.getParameter("description");
         String action = request.getParameter("action");
+        System.out.println(request.getParameter("datetime"));
         HttpSession session = request.getSession();
         int userId = (int)session.getAttribute("id");
         ToDoList toDoList = new ToDoList(title, description, action, userId);
@@ -33,7 +34,7 @@ public class home extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        int userId = (int)session.getAttribute("id");
+        int userId = (int) session.getAttribute("id");
         ArrayList<ToDoList> toDoLists = null;
         try {
             toDoLists = (ArrayList<ToDoList>) toDoListDAO.findByUserId(userId);
@@ -43,4 +44,9 @@ public class home extends HttpServlet {
         request.setAttribute("todolists", toDoLists);
         request.getRequestDispatcher("home.jsp").forward(request, response);
     }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    }
+
 }

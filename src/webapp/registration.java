@@ -1,10 +1,8 @@
 package webapp;
 
-import DAO.implementation.UserDAOImpl;
-import exeption.EmailAlreadyExists;
+import exeptions.EmailAlreadyExists;
 import model.User;
-import org.apache.commons.codec.digest.DigestUtils;
-import service.Service;
+import service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,10 +23,8 @@ public class registration extends HttpServlet {
 
         User user = new User(email, password, firstName, secondName);
 
-
-
         try {
-            Service.registration(user);
+            UserService.registration(user);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (EmailAlreadyExists e) {
@@ -36,7 +32,6 @@ public class registration extends HttpServlet {
             request.getRequestDispatcher("/registration.jsp").forward(request, response);
         }
         response.sendRedirect("/SoftServe_war_exploded/login");
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
