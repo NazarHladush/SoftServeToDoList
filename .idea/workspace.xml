@@ -7,17 +7,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87aff5e-b817-43af-b18d-74456038403f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SoftServe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SoftServe.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/connection/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/connection/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exeption/EmailAlreadyExists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exeptions/EmailAlreadyExists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exeption/IncorrectLoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exeptions/IncorrectLoginData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/GeneralDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/ToDoListDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/implementation/ToDoListDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/implementation/UserDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServletFilter/AuthFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServletFilter/CharsetFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/connection/ConnectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exeptions/EmailAlreadyExists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exeptions/IncorrectLoginData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ToDoList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ToDoListService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/delete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/home.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/registration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/test.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,23 +55,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - softserve@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - softserve@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - softserve@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="softserve: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -62,8 +65,8 @@
         <option value="jsf" />
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -89,7 +92,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/english" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Telegram Desktop/Z_z_dialog/Z_z_dialog" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -99,15 +102,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\git\SoftServeToDoList\web\WEB-INF\lib" />
+      <recent name="B:\Downloads\SoftServe\web\WEB-INF\lib" />
+      <recent name="B:\Downloads\SoftServe\web\WEB-INF\css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="B:\Downloads\SoftServe\web\WEB-INF\lib" />
       <recent name="B:\Downloads\SoftServe\web" />
       <recent name="B:\Downloads\SoftServe\web\WEB-INF" />
       <recent name="B:\Downloads\SoftServe\web\css" />
-      <recent name="B:\Downloads\SoftServe\web\WEB-INF\css" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="B:\Downloads\SoftServe\web\WEB-INF\lib" />
       <recent name="B:\Downloads\SoftServe\web\WEB-INF\css" />
     </key>
   </component>
@@ -318,6 +322,8 @@
       <workItem from="1570205478915" duration="1467000" />
       <workItem from="1570220320082" duration="1875000" />
       <workItem from="1570444405052" duration="23656000" />
+      <workItem from="1570515453551" duration="13516000" />
+      <workItem from="1570551815827" duration="37471000" />
     </task>
     <servers />
   </component>

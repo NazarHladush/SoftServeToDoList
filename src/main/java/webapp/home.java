@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 @WebServlet("/home")
 public class home extends HttpServlet {
@@ -20,10 +22,10 @@ public class home extends HttpServlet {
         String title = request.getParameter("title");
         String description = request.getParameter("description");
         String action = request.getParameter("action");
-        System.out.println(request.getParameter("datetime"));
+        LocalDateTime time = LocalDateTime.parse(request.getParameter("datetime"));
         HttpSession session = request.getSession();
         int userId = (int)session.getAttribute("id");
-        ToDoList toDoList = new ToDoList(title, description, action, userId);
+        ToDoList toDoList = new ToDoList(title, description, action, time, userId);
         try {
             toDoListDAO.create(toDoList);
         } catch (SQLException e) {
@@ -33,20 +35,7 @@ public class home extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        int userId = (int) session.getAttribute("id");
-        ArrayList<ToDoList> toDoLists = null;
-        try {
-            toDoLists = (ArrayList<ToDoList>) toDoListDAO.findByUserId(userId);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        request.setAttribute("todolists", toDoLists);
-        request.getRequestDispatcher("home.jsp").forward(request, response);
-    }
-
-    @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        request.getRequestDispatcher("home2.jsp").forward(request, response);
     }
 
 }

@@ -1,7 +1,7 @@
 package model;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class ToDoList implements Serializable {
 
@@ -11,20 +11,21 @@ public class ToDoList implements Serializable {
     private String title;
     private String description;
     private String action;
-    private Timestamp time;
+    private LocalDateTime time;
     private int userId;
 
     public ToDoList() {
     }
 
-    public ToDoList(String title, String description, String action, int userId) {
+    public ToDoList(String title, String description, String action, LocalDateTime time, int userId) {
         this.title = title;
         this.description = description;
         this.action = action;
+        this.time = time;
         this.userId = userId;
     }
 
-    public ToDoList(int id, String title, String description, String action, Timestamp time, int userId) {
+    public ToDoList(int id, String title, String description, String action, LocalDateTime time, int userId) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -69,11 +70,11 @@ public class ToDoList implements Serializable {
         this.action = action;
     }
 
-    public Timestamp getTime() {
+    public LocalDateTime getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(LocalDateTime time) {
         this.time = time;
     }
 
