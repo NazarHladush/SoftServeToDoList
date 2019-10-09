@@ -7,36 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87aff5e-b817-43af-b18d-74456038403f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftServe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SoftServe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/test.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/GeneralDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/ToDoListDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/UserDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/implementation/ToDoListDAOImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/implementation/UserDAOImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServletFilter/AuthFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServletFilter/CharsetFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/connection/ConnectionManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exeptions/EmailAlreadyExists.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exeptions/IncorrectLoginData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ToDoList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ToDoListService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/delete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/home.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/login.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/registration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/home2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SoftServe_war_exploded/home2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/home2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/home2.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -323,7 +296,7 @@
       <workItem from="1570220320082" duration="1875000" />
       <workItem from="1570444405052" duration="23656000" />
       <workItem from="1570515453551" duration="13516000" />
-      <workItem from="1570551815827" duration="37471000" />
+      <workItem from="1570551815827" duration="49576000" />
     </task>
     <servers />
   </component>
