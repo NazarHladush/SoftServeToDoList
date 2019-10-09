@@ -5,6 +5,8 @@ import connection.ConnectionManager;
 import model.ToDoList;
 
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,9 +20,9 @@ public class ToDoListDAOImpl implements ToDoListDAO {
     //language=SQL
     private static String FIND_BY_ID = "SELECT * FROM `softserve.todolist` WHERE id=?";
     //language=SQL
-    private static String CREATE = "INSERT INTO softserve.todolist (`title`, `description`, `action`, `user_id`) Values (?, ?, ?, ?)";
+    private static String CREATE = "INSERT INTO softserve.todolist (`title`, `description`, `action`, `time`, `user_id`) Values (?, ?, ?, ?, ?)";
     //language=SQL
-    private static String UPDATE = "UPDATE softserve.todolist SET (`title=?`, `description=?`, `action=?`, `time=dafault`) WHERE `user.id`=?";
+    private static String UPDATE = "UPDATE `softserve`.`todolist` SET `title` = ?, `description` = ?, `action` = ?, `time` = ?, `user_id`=? WHERE (`id` = ?)";
 
     private static PreparedStatement createPreparedStatementByUserId(Connection connection, String sql, Integer id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement(sql);
@@ -39,7 +41,8 @@ public class ToDoListDAOImpl implements ToDoListDAO {
         ps.setString(1, toDoList.getTitle());
         ps.setString(2, toDoList.getDescription());
         ps.setString(3, toDoList.getAction());
-        ps.setInt(4, toDoList.getUserId());
+        ps.setTimestamp(4, Timestamp.valueOf(toDoList.getTime()));
+        ps.setInt(5, toDoList.getUserId());
         return ps;
     }
 
@@ -48,7 +51,9 @@ public class ToDoListDAOImpl implements ToDoListDAO {
         ps.setString(1, toDoList.getTitle());
         ps.setString(2, toDoList.getDescription());
         ps.setString(3, toDoList.getAction());
-        ps.setInt(4, toDoList.getId());
+        ps.setTimestamp(4, Timestamp.valueOf(toDoList.getTime()));
+        ps.setInt(5,toDoList.getUserId());
+        ps.setInt(6, toDoList.getId());
         return ps;
     }
 
@@ -63,7 +68,8 @@ public class ToDoListDAOImpl implements ToDoListDAO {
                 String title = resultSet.getString(2);
                 String description = resultSet.getString(3);
                 String action = resultSet.getString(4);
-                Timestamp time = resultSet.getTimestamp(5);
+                Timestamp ts = resultSet.getTimestamp(5);
+                LocalDateTime time = ts.toLocalDateTime();
                 int userId = resultSet.getInt(6);
                 toDoLists.add(new ToDoList(id, title, description, action, time, userId));
             }
@@ -81,7 +87,8 @@ public class ToDoListDAOImpl implements ToDoListDAO {
                 String title = resultSet.getString(2);
                 String description = resultSet.getString(3);
                 String action = resultSet.getString(4);
-                Timestamp time = resultSet.getTimestamp(5);
+                Timestamp ts = resultSet.getTimestamp(5);
+                LocalDateTime time = ts.toLocalDateTime();
                 int userId = resultSet.getInt(6);
                 toDoList = new ToDoList(id, title, description, action, time, userId);
             }
@@ -124,7 +131,8 @@ public class ToDoListDAOImpl implements ToDoListDAO {
                 String title = resultSet.getString(2);
                 String description = resultSet.getString(3);
                 String action = resultSet.getString(4);
-                Timestamp time = resultSet.getTimestamp(5);
+                Timestamp ts = resultSet.getTimestamp(5);
+                LocalDateTime time = ts.toLocalDateTime();
                 int userId = resultSet.getInt(6);
                 toDoLists.add(new ToDoList(toDoListId, title, description, action, time, userId));
             }

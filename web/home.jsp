@@ -18,71 +18,61 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<a href="/SoftServe_war_exploded/logout"><input class="btn" type="button" value="LogOut"></a>
 <form action="/SoftServe_war_exploded/home" method="post" class="d-flex justify-content-center">
-    <input type="text" name="title" placeholder="Title">
-    <input type="text" name="description" placeholder="Description">
-<%--    <div class="dropdown">--%>
-<%--    <select name="action" class="btn btn-secondary dropdown">--%>
-<%--        <div class="dropdown-menu">--%>
-<%--        <option class="dropdown-item" value="Today">Today</option>--%>
-<%--        <option class="dropdown-item" value="Tomorrow">Tomorrow</option>--%>
-<%--        <option class="dropdown-item" value="Upcoming">Upcoming</option>--%>
-<%--        </div>--%>
-<%--    </select>--%>
-<%--    </div>--%>
-        <input type="datetime-local" name="datetime">
-<%--    <input type="text" name="action" placeholder="Action">--%>
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="text" name="description" placeholder="Description" required>
+    <input type="datetime-local" name="datetime" required>
     <button type="submit" class="btn btn-light">Add</button>
 </form>
 <div class="d-flex justify-content-center">
-<table class="table table-striped">
-    <tr>
-<%--        <th>Id</th>--%>
-        <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">Action</th>
-        <th scope="col">Time</th>
-        <th scope="col"></th>
-    </tr>
-    <c:forEach var="user" items="${todolists}">
+    <table class="table table-striped">
         <tr>
-<%--            <td>${user.id}</td>--%>
-            <td scope="row">${user.title}</td>
-            <td scope="row">${user.description}</td>
-            <td scope="row">${user.action}</td>
-            <td scope="row">${user.time}</td>
-            <td scope="row"><input class="btn btn-danger" type="button" onclick="deleteItem(${user.id})" value="Delete"></td>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+            <th scope="col">Time</th>
+            <th scope="col"></th>
         </tr>
-    </c:forEach>
-</table>
+        <c:forEach var="user" items="${todolists}">
+            <tr>
+                <td scope="row">${user.title}</td>
+                <td scope="row">${user.description}</td>
+                <td scope="row">${user.action}</td>
+                <td scope="row">${user.time}</td>
+                <td scope="row"><input class="btn btn-danger" type="button" onclick="deleteTodo(${user.id})"
+                                       value="Delete"></td>
+            </tr>
+        </c:forEach>
+    </table>
 
 </div>
 </body>
 </html>
 <script>
-    function deleteItem(id){
-        var url = "http://localhost:8090/SoftServe_war_exploded/home/delete/";
-        var xhr = new XMLHttpRequest();
-        xhr.open("DELETE", url+id);
-        xhr.onload = function () {
-            if (xhr.readyState == 4 && xhr.status == "200") {
-                // alert("200");
-                document.location.reload();
-            } else {
-                console.error("error");
-            }
-        }
-        xhr.send(null);
-    }
+    // function deleteItem(id) {
+    //     var url = "http://localhost:8090/SoftServe_war_exploded/home/delete/";
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.open("DELETE", url + id);
+    //     xhr.onload = function () {
+    //         if (xhr.readyState == 4 && xhr.status == "200") {
+    //             // alert("200");
+    //             document.location.reload();
+    //         } else {
+    //             console.error("error");
+    //         }
+    //     }
+    //     xhr.send(null);
+    // }
 
-    function deleteTodo(id){
+    function deleteTodo(id) {
         $.ajax({
-                url: '/SoftServe_war_exploded/home',
-                data: {name:"id"},
+                url: '/SoftServe_war_exploded/home/delete'+id,
+                // data: {name:"id"},
                 type: 'delete',
                 cache: false,
                 success: function () {
-                    alert("ok");
+                    document.location.reload();
                 },
                 error: function () {
                     alert('error');
@@ -91,3 +81,4 @@
         )
     }
 </script>
+
