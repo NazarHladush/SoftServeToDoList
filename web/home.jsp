@@ -32,8 +32,18 @@
                         class="sr-only">(current)</span></a></li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <div class="input-group">
+                <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                    <option selected value="0">All</option>
+                    <option value="1">Expired</option>
+                    <option value="2">Today</option>
+                    <option value="3">Tomorrow</option>
+                    <option value="4">Upcoming</option>
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" onclick="filter()">Filter</button>
+                </div>
+            </div>
             </form>
         </div>
     </nav>
@@ -169,6 +179,18 @@
         for (var item of items) {
             item.action = getAction(item.time);
             $('#items-list').append(createRow(item));
+        }
+    }
+
+    function filter() {
+        $('#items-list').html('');
+        for (var item of items) {
+            if(item.action === $( "#inputGroupSelect04 option:selected" ).text()) {
+                $('#items-list').append(createRow(item));
+            }
+            else if ('All' === $( "#inputGroupSelect04 option:selected" ).text()) {
+                $('#items-list').append(createRow(item));
+            }
         }
     }
 
