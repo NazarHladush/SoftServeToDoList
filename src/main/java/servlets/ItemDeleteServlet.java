@@ -1,6 +1,6 @@
 package servlets;
 
-import DAO.implementation.ToDoListDAOImpl;
+import service.ToDoListService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,9 +15,8 @@ public class ItemDeleteServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getPathInfo().replace("/", ""));
-        ToDoListDAOImpl toDoListDAO = new ToDoListDAOImpl();
         try {
-            toDoListDAO.delete(id);
+            ToDoListService.deleteItem(id);
         } catch (SQLException e) {
             e.printStackTrace();
         }

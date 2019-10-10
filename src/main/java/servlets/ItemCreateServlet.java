@@ -1,7 +1,7 @@
 package servlets;
 
-import DAO.implementation.ToDoListDAOImpl;
 import model.ToDoList;
+import service.ToDoListService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,15 +16,17 @@ import java.time.LocalDateTime;
 public class ItemCreateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ToDoListDAOImpl toDoListDAO = new ToDoListDAOImpl();
+
         int userId = (int) req.getSession().getAttribute("id");
         String title = req.getParameter("title");
         String description = req.getParameter("description");
         String action = req.getParameter("action");
         LocalDateTime time = LocalDateTime.parse(req.getParameter("datetime"));
 
+        ToDoList toDoList = new ToDoList(title, description, action, time, userId);
+
         try {
-            toDoListDAO.create(new ToDoList(title, description, action, time, userId));
+            ToDoListService.createItem(toDoList);
         } catch (SQLException e) {
             e.printStackTrace();
         }
