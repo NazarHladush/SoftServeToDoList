@@ -17,16 +17,19 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="#">ToDo List</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#">ToDo List</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a></li>
-                <li class="nav-item active"><a class="nav-link" href="logout">LogOut <span class="sr-only">(current)</span></a></li>
+                <li class="nav-item active"><a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active"><a class="nav-link" href="logout">LogOut <span
+                        class="sr-only">(current)</span></a></li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -47,9 +50,10 @@
         <table class="table">
             <thead>
             <tr>
-<%--                <th>#</th>--%>
+                <%--                <th>#</th>--%>
                 <th>Title</th>
                 <th>Description</th>
+                <th>Action</th>
                 <th>Date</th>
                 <th></th>
                 <th></th>
@@ -60,8 +64,9 @@
             </tbody>
         </table>
     </div>
-<%--    Create Model--%>
-    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+    <%--    Create Model--%>
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -73,15 +78,18 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="item-name">Item name</label>
-                        <input class="form-control" type="text" name="item-name" id="create-item-name" value="" required>
+                        <input class="form-control" type="text" name="item-name" id="create-item-name" value=""
+                               required>
                     </div>
                     <div class="form-group">
                         <label for="item-description">Item description</label>
-                        <input class="form-control" type="text" name="item-description" id="create-item-description" value="" required>
+                        <input class="form-control" type="text" name="item-description" id="create-item-description"
+                               value="" required>
                     </div>
                     <div class="form-group">
                         <label for="date">Date</label>
-                        <input class="form-control" type="datetime-local" name="date" id="create-date" value="" required>
+                        <input class="form-control" type="datetime-local" name="date" id="create-date" value=""
+                               required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -94,7 +102,8 @@
     <%--    Create Model--%>
 
     <%--    Update Model--%>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -110,7 +119,8 @@
                     </div>
                     <div class="form-group">
                         <label for="item-description">Item description</label>
-                        <input class="form-control" type="text" name="item-description" id="item-description" value="" required>
+                        <input class="form-control" type="text" name="item-description" id="item-description" value=""
+                               required>
                     </div>
                     <div class="form-group">
                         <label for="date">Date</label>
@@ -129,10 +139,13 @@
 </main>
 
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
 <script>
@@ -145,7 +158,7 @@
 
     function init() {
         items = [];
-        $.get("items", function(data) {
+        $.get("items", function (data) {
             items = JSON.parse(data);
             fillTable(items);
         });
@@ -153,18 +166,21 @@
 
     function fillTable(items) {
         $('#items-list').html('');
-        // items.forEach(item => $('#items-list').append(createRow(item)));
         for (var item of items) {
+            item.action = getAction(item.time);
             $('#items-list').append(createRow(item));
         }
     }
 
     function createRow(item) {
         var row = $('<tr></tr>');
-        // row.append(createTd(''));
+        if(item.action === 'Expired') {
+            row = $('<tr style="color: red"></tr>');
+        }
         row.append(createTd(item.title));
         row.append(createTd(item.description));
-        row.append(createTd(item.time.date.year+'/'+item.time.date.month+'/'+item.time.date.day+' '+item.time.time.hour+':'+item.time.time.minute));
+        row.append(createTd(item.action));
+        row.append(createTd(parseDate(item.time, '/')));
         row.append(createEditButton(item.id));
         row.append(createDeleteButton(item.id));
         return row;
@@ -182,10 +198,8 @@
             var item = items.find(item=>item.id == id);
             $('#item-name').val(item.title);
             $('#item-description').val(item.description);
-            $('#date').val(item.time.date.year+'-'+item.time.date.month+'-'+item.time.date.day+'T'+item.time.time.hour+':'+item.time.time.minute);
-            console.log(item.time.date.year+'-'+item.time.date.month+'-'+item.time.date.day+'T'+item.time.time.hour+':'+item.time.time.minute);
+            $('#date').val(parseDate(item.time, '-'));
             selectedId = id;
-
         });
         var td = $('<td></td>');
         td.append(button);
@@ -196,7 +210,7 @@
         var button = $('<button type="button" class="btn btn-danger">Delete</button>');
         button.click(function () {
             $.ajax({
-                    url: '/SoftServe_war_exploded/item/delete/'+id,
+                    url: '/SoftServe_war_exploded/item/delete/' + id,
                     type: 'delete',
                     cache: false,
                     success: function () {
@@ -206,7 +220,8 @@
                         alert('error');
                     }
                 }
-            )});
+            )
+        });
         var td = $('<td></td>');
         td.append(button);
         return td;
@@ -215,7 +230,13 @@
     function updateItem() {
         $.ajax({
                 url: 'item/update',
-                data: {id: selectedId, title:$('#item-name').val(), description:$('#item-description').val(), action:'default', datetime:$('#date').val()},
+                data: {
+                    id: selectedId,
+                    title: $('#item-name').val(),
+                    description: $('#item-description').val(),
+                    action: 'default',
+                    datetime: $('#date').val()
+                },
                 type: 'post',
                 cache: false,
                 success: function () {
@@ -232,7 +253,12 @@
     function createItem() {
         $.ajax({
                 url: 'item/create',
-                data: {title:$('#create-item-name').val(), description:$('#create-item-description').val(), action:'default', datetime:$('#create-date').val()},
+                data: {
+                    title: $('#create-item-name').val(),
+                    description: $('#create-item-description').val(),
+                    action: 'default',
+                    datetime: $('#create-date').val()
+                },
                 type: 'post',
                 cache: false,
                 success: function () {
@@ -248,10 +274,10 @@
 
     function getDate() {
         var now = new Date();
-        var utcString = now.toISOString().substring(0,19);
+        var utcString = now.toISOString().substring(0, 19);
         var year = now.getFullYear();
         var month = now.getMonth() + 1;
-        var day = now.getDate() +1;
+        var day = now.getDate() + 1;
         var hour = now.getHours();
         var minute = now.getMinutes();
         var second = now.getSeconds();
@@ -260,10 +286,56 @@
             (day < 10 ? "0" + day.toString() : day) + "T" +
             (hour < 10 ? "0" + hour.toString() : hour) + ":" +
             (minute < 10 ? "0" + minute.toString() : minute) +
-            utcString.substring(16,19);
+            utcString.substring(16, 19);
         var datetimeField = document.getElementById("create-date");
         datetimeField.value = localDatetime;
-    };
+    }
+    function parseDate(itemDate, settings) {
+        var date;
+        if (settings === '-') {
+            date = itemDate.date.year + '-' + itemDate.date.month + '-' + itemDate.date.day + 'T' + itemDate.time.hour + ':' + itemDate.time.minute;
+        } else if (settings === '/') {
+            date = itemDate.date.year + '/' + itemDate.date.month + '/' + itemDate.date.day + ' ' + itemDate.time.hour + ':' + itemDate.time.minute;
+        }
+        // else if (settings == 'todayDate') {
+        //     date = itemDate.date.year + '-' + itemDate.date.month + '-' + itemDate.date.day;
+        // }
+        return date;
+    }
+
+    function getTodayDate() {
+        var today = new Date().toISOString();
+        var json = {
+            'date': {
+                'year': Number(today.substring(0, 4)),
+                'month': Number(today.substring(5, 7)),
+                'day': Number(today.substring(8, 10))
+            }
+        };
+        return json;
+    }
+
+    function getAction(itemDate) {
+        var text = ['Expired', 'Today', 'Tomorrow', 'Upcoming'];
+        if ((itemDate.date.year < getTodayDate().date.year) ||
+            (itemDate.date.year === getTodayDate().date.year &&
+                itemDate.date.month < getTodayDate().date.month) ||
+            (itemDate.date.year === getTodayDate().date.year &&
+                itemDate.date.month === getTodayDate().date.month &&
+                itemDate.date.day < getTodayDate().date.day)) {
+            return text[0];
+        } else if ((itemDate.date.year === getTodayDate().date.year) &&
+            (itemDate.date.month === getTodayDate().date.month) &&
+            (itemDate.date.day === getTodayDate().date.day)) {
+            return text[1];
+        } else if((itemDate.date.year === getTodayDate().date.year)&&
+            (itemDate.date.month === getTodayDate().date.month)&&
+            (itemDate.date.day === getTodayDate().date.day+1)){
+            return text[2];
+        } else {
+            return text[3];
+        }
+    }
 
 </script>
 </html>
