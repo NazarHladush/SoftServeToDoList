@@ -1,4 +1,4 @@
-package ServletFilter;
+package servletFilters;
 
 import javax.servlet.*;
 import java.io.IOException;

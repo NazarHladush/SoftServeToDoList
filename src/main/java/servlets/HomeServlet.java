@@ -1,4 +1,4 @@
-package webapp;
+package servlets;
 
 import DAO.implementation.ToDoListDAOImpl;
 import model.ToDoList;
@@ -12,11 +12,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Comparator;
 
 @WebServlet("/home")
-public class home extends HttpServlet {
+public class HomeServlet extends HttpServlet {
         ToDoListDAOImpl toDoListDAO = new ToDoListDAOImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String title = request.getParameter("title");
@@ -35,7 +33,7 @@ public class home extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("home2.jsp").forward(request, response);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
 }

@@ -1,4 +1,4 @@
-package webapp;
+package servlets;
 
 import exeptions.EmailAlreadyExists;
 import model.User;

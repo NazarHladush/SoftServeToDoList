@@ -1,4 +1,4 @@
-package webapp;
+package servlets;
 
 import exeptions.IncorrectLoginData;
 import model.User;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/login")
-public class login extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String uEmail = request.getParameter("loginname");

@@ -1,4 +1,4 @@
-package webapp;
+package servlets;
 
 import DAO.implementation.ToDoListDAOImpl;
 import com.google.gson.Gson;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 @WebServlet("/items")
-public class items extends HttpServlet {
+public class ItemsServlet extends HttpServlet {
     ToDoListDAOImpl toDoListDAO = new ToDoListDAOImpl();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

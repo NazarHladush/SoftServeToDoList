@@ -1,4 +1,4 @@
-package webapp;
+package servlets;
 
 import DAO.implementation.ToDoListDAOImpl;
 import model.ToDoList;
