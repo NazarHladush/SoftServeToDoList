@@ -1,7 +1,7 @@
 package servlets;
 
-import DAO.implementation.ToDoListDAOImpl;
 import model.ToDoList;
+import service.ToDoListService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 public class ItemUpdateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ToDoListDAOImpl toDoListDAO = new ToDoListDAOImpl();
         int userId = (int) req.getSession().getAttribute("id");
         int id = Integer.parseInt(req.getParameter("id"));
         String title = req.getParameter("title");
@@ -24,8 +23,10 @@ public class ItemUpdateServlet extends HttpServlet {
         String action = req.getParameter("action");
         LocalDateTime time = LocalDateTime.parse(req.getParameter("datetime"));
 
+        ToDoList toDoList = new ToDoList(id, title, description, action, time, userId);
+
         try {
-            toDoListDAO.update(new ToDoList(id, title, description, action, time, userId));
+            ToDoListService.updateItem(toDoList);
         } catch (SQLException e) {
             e.printStackTrace();
         }
